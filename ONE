@@ -1,0 +1,6 @@
+def sum_3_5(x):
+    storage = 0
+    for n in range(x):
+        if n % 5 == 0 or n % 3 == 0:
+            storage += n
+    return storage
