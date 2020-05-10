@@ -4,3 +4,6 @@ def sum_3_5(x):
         if n % 5 == 0 or n % 3 == 0:
             storage += n
     return storage
+
+
+print(sum_3_5(1000)
