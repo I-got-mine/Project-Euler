@@ -1,0 +1,18 @@
+def fibonacci():
+    fib = [1, 2]   # initializes the list
+    storage = 2    # initializes the counter
+    while storage > 0:
+        fib.append(fib[storage - 2] + fib[storage - 1])
+        storage += 1
+        if fib[-1] >= 4000000:
+            break
+    return fib
+
+evens_list = [n for n in fibonacci() if n% 2 ==0]
+
+total = 0
+
+for n in range(len(evens_list)):
+    total += evens_list[n]
+
+print(total)
