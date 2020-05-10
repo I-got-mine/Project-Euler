@@ -1,0 +1,32 @@
+import math
+
+
+def largest_factors(x):
+    '''generates a descending list of factors of X'''
+    factor_list = []
+    factor = x
+    max_divisor = math.floor(math.sqrt(x))
+    for n in range(2, 1 + max_divisor):
+        if x % n == 0:
+            factor = x / n
+            factor_list.append(int(factor))
+            factor_list.append(int(n))
+            factor_list.sort(reverse = True)
+    return factor_list
+
+
+def isPrime(x):
+    '''Returns 'True' for prime, 'False' otherwise'''
+    max_divisor = math.floor(math.sqrt(x))
+    for n in range(3 , 1 + max_divisor, 2):
+        if x % n == 0:
+            return False
+    return True
+
+
+test = largest_factors(600851475143)
+        
+for n in range(len(test)):
+    if isPrime(test[n]):
+        print(test[n])
+        break
