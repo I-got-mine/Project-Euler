@@ -1,0 +1,11 @@
+sum_squares = 0
+square_sums = 0
+
+for n in range(101):
+    sum_squares += n**2
+    square_sums += n
+
+square_sums = square_sums**2
+
+difference = square_sums - sum_squares
+print(difference)
