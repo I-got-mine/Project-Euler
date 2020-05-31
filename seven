@@ -1,0 +1,22 @@
+def isPrime(x):
+    '''
+    Returns 'True' for prime, 'False' otherwise
+    ***warning: false positives in first 10 digits***
+    '''
+    max_divisor = round(x/2)
+    for n in range(3 , 1 + max_divisor, 2):
+        if x % n == 0 or x % 2 == 0:
+            return False
+    return True
+
+primeList = [2, 3, 5]
+num = 5
+
+while len(primeList) < 10001:
+    num += 1
+    if isPrime(num):
+        primeList.append(num)
+    else:
+        continue
+
+print(primeList[-1])
